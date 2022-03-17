@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProgramController">
+   <children>
+      <HBox alignment="TOP_CENTER" prefHeight="20.0" prefWidth="600.0">
+         <children>
+            <Label alignment="CENTER" text="Number of PrgStates:" />
+            <TextField fx:id="prgStatesCounter" editable="false" />
+         </children>
+      </HBox>
+      <GridPane prefHeight="393.0" prefWidth="600.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="182.4" minHeight="0.20000238418579386" prefHeight="15.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="356.3999904632568" minHeight="10.0" prefHeight="170.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="356.3999904632568" minHeight="0.0" prefHeight="15.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="356.3999904632568" minHeight="0.0" prefHeight="170.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="247.0" text="HeapTable:" textAlignment="CENTER" />
+            <TableView fx:id="heapTable" prefHeight="356.0" prefWidth="196.0" GridPane.rowIndex="1">
+              <columns>
+                <TableColumn fx:id="heapAddressColumn" editable="false" prefWidth="100.60000306367874" text="address" />
+                <TableColumn fx:id="heapValueColumn" editable="false" prefWidth="98.5999755859375" text="value" />
+              </columns>
+            </TableView>
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="224.0" text="Out:" GridPane.columnIndex="1" />
+            <ListView fx:id="outList" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="225.0" text="FileTable:" GridPane.columnIndex="2" />
+            <ListView fx:id="fileList" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="212.0" text="ProgramState ids:" GridPane.rowIndex="2" />
+            <ListView fx:id="prgStateList" onMouseClicked="#onStateChangedHandler" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="266.0" text="SymTable" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TableView fx:id="symTable" prefHeight="153.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+              <columns>
+                <TableColumn fx:id="symNameColumn" prefWidth="100.19999694824219" text="name" />
+                <TableColumn fx:id="symValueColumn" prefWidth="99.0" text="value" />
+              </columns>
+            </TableView>
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="239.0" text="ExeStack" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <ListView fx:id="exeStackList" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="304.0" text="LatchTable" GridPane.columnIndex="3" />
+            <TableView fx:id="latchTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+              <columns>
+                <TableColumn fx:id="latchLocationColumn" prefWidth="111.20000916719437" text="Location" />
+                <TableColumn fx:id="latchValueColumn" prefWidth="91.199951171875" text="Value" />
+              </columns>
+            </TableView>
+         </children>
+      </GridPane>
+      <Button fx:id="runOneStepButton" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#runOneStepHandler" text="Run one step" />
+   </children>
+</VBox>
