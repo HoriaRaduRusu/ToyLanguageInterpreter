@@ -21,7 +21,7 @@ public class HeapAllocStmt implements IStmt{
     }
 
     @Override
-    public PrgState execute(PrgState state) throws NullKeyException, InvalidIDException, TypeMismatchException,
+    public PrgState realize(PrgState state) throws NullKeyException, InvalidIDException, TypeMismatchException,
             InvalidOperationException, DivisionByZeroException, UndeclaredVariableException {
         MyIDictionary<String, IValue> symTbl = state.getSymTable();
         MyIHeap<Integer, IValue> heap = state.getHeap();

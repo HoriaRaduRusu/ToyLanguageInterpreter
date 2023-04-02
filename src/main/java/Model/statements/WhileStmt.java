@@ -23,7 +23,7 @@ public class WhileStmt implements IStmt{
     }
 
     @Override
-    public PrgState execute(PrgState state) throws TypeMismatchException, InvalidOperationException, NullKeyException,
+    public PrgState realize(PrgState state) throws TypeMismatchException, InvalidOperationException, NullKeyException,
             InvalidIDException, DivisionByZeroException {
         MyIDictionary<String, IValue> symTbl = state.getSymTable();
         MyIHeap<Integer, IValue> heap = state.getHeap();

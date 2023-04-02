@@ -26,7 +26,7 @@ public class OpenRFileStmt implements IStmt{
     public String toString() { return "openRFile("+this.exp.toString()+")";}
 
     @Override
-    public PrgState execute(PrgState state) throws TypeMismatchException, InvalidOperationException, NullKeyException,
+    public PrgState realize(PrgState state) throws TypeMismatchException, InvalidOperationException, NullKeyException,
             InvalidIDException, DivisionByZeroException, FileAlreadyOpenException, InvalidFileException {
         MyIDictionary<String, IValue> symTbl = state.getSymTable();
         MyIDictionary<StringValue, BufferedReader> fileTable = state.getFileTable();

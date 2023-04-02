@@ -4,12 +4,9 @@ import Exceptions.*;
 import Model.adts.*;
 import Model.statements.IStmt;
 import Model.values.IValue;
-import Model.values.IntValue;
 import Model.values.StringValue;
 
 import java.io.BufferedReader;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 
 public class PrgState {
@@ -125,7 +122,7 @@ public class PrgState {
             NullKeyException, FileAlreadyOpenException, InvalidFileException, FileNotOpenException, FileReadException {
         if(this.exeStack.isEmpty()) throw new EmptyStackException("prgstate stack is empty");
         IStmt crtStmt = this.exeStack.pop();
-        return crtStmt.execute(this);
+        return crtStmt.realize(this);
     }
 
 }

@@ -13,7 +13,7 @@ public class NopStmt implements IStmt{
     }
 
     @Override
-    public PrgState execute(PrgState state){
+    public PrgState realize(PrgState state){
         return null;
     }
 

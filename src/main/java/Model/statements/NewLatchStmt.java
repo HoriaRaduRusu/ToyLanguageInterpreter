@@ -21,7 +21,7 @@ public class NewLatchStmt implements IStmt{
     }
 
     @Override
-    public PrgState execute(PrgState state) throws InvalidIDException, TypeMismatchException, InvalidOperationException, DivisionByZeroException, UndeclaredVariableException, RedeclaredVariableException, NullKeyException, FileAlreadyOpenException, InvalidFileException, FileNotOpenException, FileReadException {
+    public PrgState realize(PrgState state) throws InvalidIDException, TypeMismatchException, InvalidOperationException, DivisionByZeroException, UndeclaredVariableException, RedeclaredVariableException, NullKeyException, FileAlreadyOpenException, InvalidFileException, FileNotOpenException, FileReadException {
         MyIDictionary<String, IValue> symTbl = state.getSymTable();
         MyIHeap<Integer, IValue> heap = state.getHeap();
         MyIHeap<Integer, Integer> latchTable = state.getLatchTable();

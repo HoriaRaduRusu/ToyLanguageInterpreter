@@ -22,7 +22,7 @@ public class CondAssignmentStmt implements IStmt{
     }
 
     @Override
-    public PrgState execute(PrgState state) throws InvalidIDException, TypeMismatchException, InvalidOperationException, DivisionByZeroException, UndeclaredVariableException, RedeclaredVariableException, NullKeyException, FileAlreadyOpenException, InvalidFileException, FileNotOpenException, FileReadException {
+    public PrgState realize(PrgState state) throws InvalidIDException, TypeMismatchException, InvalidOperationException, DivisionByZeroException, UndeclaredVariableException, RedeclaredVariableException, NullKeyException, FileAlreadyOpenException, InvalidFileException, FileNotOpenException, FileReadException {
         IStmt ifStmt = new IfStmt(this.checkExp, new AssignStmt(this.var, this.trueExp), new AssignStmt(this.var, this.falseExp));
         state.getStk().push(ifStmt);
         return null;

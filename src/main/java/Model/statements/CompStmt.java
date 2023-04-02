@@ -21,7 +21,7 @@ public class CompStmt implements IStmt{
     }
 
     @Override
-    public PrgState execute(PrgState state){
+    public PrgState realize(PrgState state){
         MyIStack<IStmt> stk = state.getStk();
         stk.push(this.second);
         stk.push(this.first);

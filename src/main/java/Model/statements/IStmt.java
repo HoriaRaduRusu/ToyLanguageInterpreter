@@ -6,7 +6,7 @@ import Model.adts.MyIDictionary;
 import Model.types.IType;
 
 public interface IStmt{
-    PrgState execute(PrgState state) throws InvalidIDException, TypeMismatchException, InvalidOperationException,
+    PrgState realize(PrgState state) throws InvalidIDException, TypeMismatchException, InvalidOperationException,
             DivisionByZeroException, UndeclaredVariableException, RedeclaredVariableException, NullKeyException,
             FileAlreadyOpenException, InvalidFileException, FileNotOpenException, FileReadException;
     IStmt deepCopy();

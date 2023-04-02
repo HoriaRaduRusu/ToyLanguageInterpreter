@@ -30,7 +30,7 @@ public class IfStmt implements IStmt{
     }
 
     @Override
-    public PrgState execute(PrgState state) throws TypeMismatchException, InvalidOperationException,
+    public PrgState realize(PrgState state) throws TypeMismatchException, InvalidOperationException,
             InvalidIDException, DivisionByZeroException, NullKeyException {
         MyIDictionary<String, IValue> symTable = state.getSymTable();
         MyIStack<IStmt> stk = state.getStk();

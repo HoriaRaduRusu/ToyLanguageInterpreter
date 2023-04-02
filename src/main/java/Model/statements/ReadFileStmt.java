@@ -32,7 +32,7 @@ public class ReadFileStmt implements IStmt{
 
 
     @Override
-    public PrgState execute(PrgState state) throws UndeclaredVariableException, NullKeyException, InvalidIDException,
+    public PrgState realize(PrgState state) throws UndeclaredVariableException, NullKeyException, InvalidIDException,
             TypeMismatchException, InvalidOperationException, DivisionByZeroException, FileNotOpenException,
             FileReadException {
         MyIDictionary<String, IValue> symTbl = state.getSymTable();

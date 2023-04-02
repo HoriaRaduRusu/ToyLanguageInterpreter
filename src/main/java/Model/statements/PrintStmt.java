@@ -18,7 +18,7 @@ public class PrintStmt implements IStmt{
     public String toString() { return "print("+exp.toString()+")";}
 
     @Override
-    public PrgState execute(PrgState state) throws TypeMismatchException, InvalidOperationException, InvalidIDException,
+    public PrgState realize(PrgState state) throws TypeMismatchException, InvalidOperationException, InvalidIDException,
             DivisionByZeroException, NullKeyException {
         MyIList<IValue> out = state.getOut();
         MyIDictionary<String, IValue> symTable = state.getSymTable();

@@ -22,7 +22,7 @@ public class VarDeclStmt implements IStmt{
     }
 
     @Override
-    public PrgState execute(PrgState state) throws RedeclaredVariableException, InvalidIDException, NullKeyException {
+    public PrgState realize(PrgState state) throws RedeclaredVariableException, InvalidIDException, NullKeyException {
         MyIDictionary<String, IValue> symTable = state.getSymTable();
         if(symTable.isDefined(this.name))
             throw new RedeclaredVariableException("variable is already declared");

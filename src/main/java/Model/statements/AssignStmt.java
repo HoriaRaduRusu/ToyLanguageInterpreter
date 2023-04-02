@@ -19,7 +19,7 @@ public class AssignStmt implements IStmt{
     public String toString() {return this.id+"="+this.exp.toString();}
 
     @Override
-    public PrgState execute(PrgState state) throws InvalidIDException, TypeMismatchException,
+    public PrgState realize(PrgState state) throws InvalidIDException, TypeMismatchException,
             InvalidOperationException, DivisionByZeroException, UndeclaredVariableException, NullKeyException {
         MyIDictionary<String, IValue> symTbl = state.getSymTable();
         MyIHeap<Integer, IValue> heap = state.getHeap();

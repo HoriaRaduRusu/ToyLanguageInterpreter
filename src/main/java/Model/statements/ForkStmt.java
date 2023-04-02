@@ -15,7 +15,7 @@ public class ForkStmt implements IStmt{
     public ForkStmt(IStmt stmt) { this.stmt = stmt; }
 
     @Override
-    public PrgState execute(PrgState state) throws InvalidIDException, TypeMismatchException, InvalidOperationException,
+    public PrgState realize(PrgState state) throws InvalidIDException, TypeMismatchException, InvalidOperationException,
             DivisionByZeroException, UndeclaredVariableException, RedeclaredVariableException, NullKeyException,
             FileAlreadyOpenException, InvalidFileException, FileNotOpenException, FileReadException {
         return new PrgState(new MyStack<>(), state.getSymTableCopy(), state.getOut(), this.stmt,

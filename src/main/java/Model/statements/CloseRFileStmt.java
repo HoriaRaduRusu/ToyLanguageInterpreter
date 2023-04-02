@@ -24,7 +24,7 @@ public class CloseRFileStmt implements IStmt{
 
 
     @Override
-    public PrgState execute(PrgState state) throws TypeMismatchException, InvalidOperationException, NullKeyException,
+    public PrgState realize(PrgState state) throws TypeMismatchException, InvalidOperationException, NullKeyException,
             InvalidIDException, DivisionByZeroException, FileNotOpenException, InvalidFileException {
         MyIDictionary<StringValue, BufferedReader> fileTable = state.getFileTable();
         MyIDictionary<String, IValue> symTbl = state.getSymTable();
